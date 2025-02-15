@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+:root {
+    color-scheme: light dark;
+    
+    /*--menico-ui--background: #ebebeb;*/
+    /*--menico-ui--text: #000;*/
+    --menico-ui--background: #141414;
+    --menico-ui--text: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --menico-ui--background: #141414;
+        --menico-ui--text: #fff;
+    }
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+html {
+    font-size: 0;
+}
+
+html {
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: 'Consolas', sans-serif;
+}
+
+body {
+    background-color: var(--menico-ui--background);
+    color: var(--menico-ui--text);
+}
+
+#rootLayout {
+    padding: 30px;
+}
+
+#dialogue {
+    background: #141414;
+    border: 1px solid #444;
+    font-size: 16px;
+    padding: 10px;
+    margin: 40px;
+    margin-bottom: 0;
+}
+
+#choices {
+    margin: 20px 0 0 40px;
+}
+
+.choice {
+    padding: 10px 14px;
+    margin-right: 20px;
+    font-family: 'Consolas', sans-serif;
+    font-size: 14px;
+    background-color: #333;
+    border: #555 solid 1px;
+}
+
+.choice:hover {
+    background: #444;
+}
