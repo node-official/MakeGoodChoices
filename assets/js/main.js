@@ -1,8 +1,8 @@
 'use strict';
 
 const dialogue_images = {
-    'START': '/assets/images/dialogue/start.png',
-    'ROOM': '/assets/images/dialogue/room.png',
+    'START': '/MakeGoodChoices/assets/images/dialogue/start.png',
+    'ROOM': '/MakeGoodChoices/assets/images/dialogue/room.png',
 };
 
 const dialogues = {
