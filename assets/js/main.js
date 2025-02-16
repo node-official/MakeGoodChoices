@@ -1,19 +1,27 @@
 'use strict';
 
+const dialogue_images = {
+    'START': '/assets/images/dialogue/start.png',
+    'ROOM': '/assets/images/dialogue/room.png',
+};
+
 const dialogues = {
     // The Beginning
     start: {
         text: "You wake up in a dark, damp room; it feels like you have been kidnapped. What will you do?",
+        image: 'ROOM',
         choices: [ { text: "Look around", next: "lookAround" }, { text: "Scream and call for help", next: "panic" } ]
     },
     panic: {
         text: "No one heard your cries.",
+        image: 'ROOM',
         choices: [ { text: "Look around", next: "lookAround" } ]
     },
     
     // Looking around
     lookAround: {
         text: "This is a dark and damp room, illuminated by a single dim light bulb. What will you do?",
+        image: 'ROOM',
         choices: [
             { text: "Examine the door", next: "inspectDoor" },
             { text: "Examine the window", next: "inspectWindow" },
@@ -48,6 +56,7 @@ const dialogues = {
     }
 };
 
+const imageElement = document.getElementById('dialogue_image');
 const dialogueElement = document.getElementById('dialogue');
 const choicesElement = document.getElementById('choices');
 
@@ -75,6 +84,8 @@ function renderDialogue() {
     choicesElement.innerHTML = '';
     
     const dialogue = dialogues[currentDialogue];
+    
+    imageElement.src = dialogue_images[dialogue.image] ?? '';
     
     const text = typeof dialogue.text === 'function' ? dialogue.text(states) : dialogue.text;
     typeText(text, dialogueElement, () => {
